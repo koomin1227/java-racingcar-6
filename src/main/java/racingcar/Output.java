@@ -27,4 +27,14 @@ public class Output {
         }
         System.out.println(distanceResult);
     }
+
+    public static void printWinner(ArrayList<Car> winnerCars) {
+        StringBuilder winners = new StringBuilder("최종 우승자 : ");
+        for (Car car : winnerCars) {
+            winners.append(car.getName())
+                    .append(", ");
+        }
+        winners.setLength(winners.length() - 2);
+        System.out.println(winners.toString());
+    }
 }
