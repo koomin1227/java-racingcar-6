@@ -28,13 +28,13 @@ public class Output {
         System.out.println(distanceResult);
     }
 
-    public static void printWinner(ArrayList<Car> winnerCars) {
-        StringBuilder winners = new StringBuilder("최종 우승자 : ");
-        for (Car car : winnerCars) {
-            winners.append(car.getName())
+    public static void printWinner(ArrayList<String> winners) {
+        StringBuilder result = new StringBuilder("\n최종 우승자 : ");
+        for (String winner : winners) {
+            result.append(winner)
                     .append(", ");
         }
-        winners.setLength(winners.length() - 2);
-        System.out.println(winners.toString());
+        result.setLength(result.length() - 2);
+        System.out.println(result.toString());
     }
 }
