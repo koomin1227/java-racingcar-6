@@ -1,7 +1,6 @@
 package racingcar;
 
 import camp.nextstep.edu.missionutils.Console;
-import camp.nextstep.edu.missionutils.Randoms;
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
@@ -38,5 +37,20 @@ public class InputTest {
         assertThatThrownBy(Input::inputNames)
                 .isInstanceOf(IllegalArgumentException.class)
                 .hasMessageContaining("이름이 5자 이상임");
+    }
+
+    @Test
+    void 시도할_회수_입력() {
+        given(Console.readLine()).willReturn("123");
+        int res = Input.inputCount();
+        assertThat(res).isEqualTo(123);
+    }
+
+    @Test
+    void 시도할_회수가_숫자가_아닌_경우_예외_발생() {
+        given(Console.readLine()).willReturn("12asd");
+        assertThatThrownBy(Input::inputCount)
+                .isInstanceOf(IllegalArgumentException.class)
+                .hasMessageContaining("숫자가 아님");
     }
 }
