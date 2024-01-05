@@ -36,4 +36,7 @@ public class RacingCarGame {
         return winners;
     }
 
+    public ArrayList<Car> getCars() {
+        return cars;
+    }
 }
