@@ -2,10 +2,11 @@ package racingcar;
 import camp.nextstep.edu.missionutils.Randoms;
 
 public class Car {
-    private String name;
+    private final String name;
     private int moveDistance;
 
-    public Car() {
+    public Car(String name) {
+        this.name = name;
         moveDistance = 0;
     }
 
@@ -14,10 +15,6 @@ public class Car {
         if (moveVariance >= 4) {
             moveDistance += 1;
         }
-    }
-
-    public void setName(String name) {
-        this.name = name;
     }
 
     public String getName() {

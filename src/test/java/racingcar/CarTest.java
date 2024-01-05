@@ -24,9 +24,7 @@ public class CarTest {
 
     @Test
     void 자동차_이름을_설정() {
-        Car car = new Car();
-
-        car.setName("hello");
+        Car car = new Car("hello");
 
         assertThat(car.getName()).isEqualTo("hello");
     }
@@ -34,7 +32,7 @@ public class CarTest {
     @Test
     void 자동차_전진() {
         given(Randoms.pickNumberInRange(0,9)).willReturn(4);
-        Car car = new Car();
+        Car car = new Car("hello");
         car.move();
         assertThat(car.getMoveDistance()).isEqualTo(1);
     }
@@ -42,7 +40,7 @@ public class CarTest {
     @Test
     void 자동차_정지() {
         given(Randoms.pickNumberInRange(0,9)).willReturn(3);
-        Car car = new Car();
+        Car car = new Car("hello");
         car.move();
         assertThat(car.getMoveDistance()).isEqualTo(0);
     }
