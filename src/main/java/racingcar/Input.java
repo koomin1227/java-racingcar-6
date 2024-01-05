@@ -6,6 +6,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 
 public class Input {
+    private static final int MAX_NAME_LENGTH = 5;
     public static ArrayList<String> inputNames() {
         String input = Console.readLine();
         ArrayList<String> names = new ArrayList<>(Arrays.asList(input.split(",")));
@@ -20,7 +21,7 @@ public class Input {
     }
 
     private static void validateNames(ArrayList<String> names) {
-        boolean isNamesCorrect = names.stream().allMatch(name -> name.length() <= 5);
+        boolean isNamesCorrect = names.stream().allMatch(name -> name.length() <= MAX_NAME_LENGTH);
         if (!isNamesCorrect) {
             throw new IllegalArgumentException("이름이 5자 이상임");
         }

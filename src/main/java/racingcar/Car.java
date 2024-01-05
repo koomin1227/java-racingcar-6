@@ -4,6 +4,7 @@ import camp.nextstep.edu.missionutils.Randoms;
 public class Car {
     private final String name;
     private int moveDistance;
+    private static final int MOVE_THRESHOLD = 4;
 
     public Car(String name) {
         this.name = name;
@@ -12,7 +13,7 @@ public class Car {
 
     public void move() {
         int moveVariance = Randoms.pickNumberInRange(0,9);
-        if (moveVariance >= 4) {
+        if (moveVariance >= MOVE_THRESHOLD) {
             moveDistance += 1;
         }
     }
