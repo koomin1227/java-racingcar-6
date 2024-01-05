@@ -13,10 +13,26 @@ public class Input {
         return names;
     }
 
+    public static int inputCount() {
+        String input = Console.readLine();
+        validateCount(input);
+        return Integer.parseInt(input);
+    }
+
     private static void validateNames(ArrayList<String> names) {
         boolean isNamesCorrect = names.stream().allMatch(name -> name.length() <= 5);
         if (!isNamesCorrect) {
             throw new IllegalArgumentException("이름이 5자 이상임");
         }
+    }
+
+    private static void validateCount(String input) {
+        if (!isNumeric(input)) {
+            throw new IllegalArgumentException("숫자가 아님");
+        }
+    }
+
+    private static boolean isNumeric(String input) {
+        return input.matches("\\d+");
     }
 }
