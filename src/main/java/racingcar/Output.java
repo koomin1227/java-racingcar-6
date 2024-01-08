@@ -21,11 +21,7 @@ public class Output {
 
     private static void printDistance(Car car) {
         int distance = car.getMoveDistance();
-        StringBuilder distanceResult = new StringBuilder();
-        for (int i = 0; i < distance; i++) {
-            distanceResult.append('-');
-        }
-        System.out.println(distanceResult);
+        System.out.println("-".repeat(Math.max(0, distance)));
     }
 
     public static void printWinner(ArrayList<String> winners) {
