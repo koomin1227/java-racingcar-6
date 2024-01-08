@@ -21,15 +21,14 @@ public class RacingCarGame {
 
     public ArrayList<String> getWinner() {
         int maxDistance = 0;
+        ArrayList<String> winners = new ArrayList<>();
         for (Car car : cars) {
             int distance = car.getMoveDistance();
             if (distance > maxDistance) {
                 maxDistance = distance;
-            }
-        }
-        ArrayList<String> winners = new ArrayList<>();
-        for (Car car : cars) {
-            if (car.getMoveDistance() == maxDistance) {
+                winners.clear();
+                winners.add(car.getName());
+            } else if (distance == maxDistance) {
                 winners.add(car.getName());
             }
         }
